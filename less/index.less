@@ -1,0 +1,280 @@
+@import "base.less";
+
+
+/* 头部 */
+#header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    /* 头部左边 */
+    .left {
+        width: 0.8rem;
+        height: 0.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            width: 0.6rem;
+            height: 0.23rem;
+            /* 使用背景图也要缩小1半  */
+            background: url(../images/sprites.png);
+            /* 默认400*400  把整个原图缩小*/
+            background-size: 2rem 2rem;
+            /* 背景图定位要缩小1半 220/2 110px */
+            background-position: 0 -1.1rem;
+        }
+    }
+
+    /* 头部中间 */
+    .center {
+        flex: 1;
+
+        form {
+            padding: 0.05rem 0;
+            position: relative;
+
+            .icon-search {
+                position: absolute;
+                top: 0.1rem;
+                left: 0.05rem;
+                width: 0.2rem;
+                height: 0.2rem;
+                background: url(../images/sprites.png);
+                background-size: 2rem 2rem;
+                background-position: -0.58rem -1.1rem;
+            }
+
+            input {
+                width: 100%;
+                height: 0.3rem;
+                border-radius: 15px;
+                padding-left: 0.3rem;
+                font-size: .14rem;
+            }
+        }
+    }
+
+    /*  头部右边 */
+    .right {
+        width: 0.5rem;
+        height: 0.4rem;
+
+        a {
+            display: block;
+            font-size: 0.14rem;
+            color: white;
+            text-align: center;
+            line-height: 0.4rem;
+            text-decoration: none;
+        }
+    }
+}
+
+/* 轮播图 */
+#slide {
+    img {
+        width: 100%;
+    }
+    .swiper-container-bullet-active{
+        background-color: #fff;
+    }
+}
+
+/* 导航栏 */
+#nav {
+    // 父子用padding    
+    padding: 0.1rem 0;
+    background-color: #fff;
+
+    ul {
+        // 让li在一行显示
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 25%;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 0.4rem;
+                }
+
+                p {
+                    // 兄弟用margin
+                    margin: 0.05rem 0;
+                }
+            }
+        }
+    }
+}
+
+/* 网页主体商品区域 */
+#main {
+    background-color: #eee;
+    padding: 0.1rem;
+
+    /* 秒杀商品 */
+    .seckill {
+        background-color: #fff;
+        border: .5px solid #ccc;
+
+        /* 网页主体商品头部区域 */
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .left {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                img {
+                    width: 0.2rem;
+                    height: 0.25rem;
+                    margin-left: 0.05rem;
+                }
+
+                >span {
+                    line-height: 0.25rem;
+                    margin-left: 0.05rem;
+                    color: @main-color;
+                }
+
+                .downtime {
+                    margin-left: 0.05rem;
+
+                    span {
+                        width: 0.15rem;
+                        height: 0.15rem;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 0.15rem;
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .right {}
+        }
+
+        /* 网页主体商品身体区域一 */
+        .content {
+            ul {
+                display: flex;
+
+                li {
+                    flex: 1;
+
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            width: 1.1rem;
+                        }
+
+                        span {
+                            color: @main-color;
+                        }
+
+                        del {
+                            color: #ccc;
+                        }
+                    }
+
+                    &~li {
+                        border-left: 1px solid #ccc;
+                    }
+                }
+            }
+        }
+    }
+
+    .market {
+        background-color: #fff;
+        margin-top: 0.1rem;
+        .title {
+            border-bottom: 1px solid #ccc;
+            padding-left: 0.3rem;
+            line-height: 0.4rem;
+            font-weight: normal;
+            position: relative;
+            &::before   {
+                content: "";
+                width: 0.04rem;
+                height: 0.16rem;
+                position: absolute;
+                background-color: @main-color;
+                left: 0.2rem;
+                top: 0.12rem;
+            }
+        }
+
+        .content {
+            display: flex;
+            .left {
+                flex: 1;
+                a {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .right {
+                flex: 1;
+                a {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+/* 底部区域的样式 */
+
+#footer {
+    // 固定定位到底部
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    // 一定要设置宽度
+    width: 100%;
+    background-color: #fff;
+
+    ul {
+        display: flex;
+
+        li {
+            flex: 1;
+
+            a {
+                display: block;
+                text-align: center;
+
+                img {
+                    width: 0.65rem;
+                    height: 0.5rem;
+                }
+
+            }
+        }
+    }
+}

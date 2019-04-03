@@ -1,0 +1,199 @@
+@import "base.less";
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* 头部区域 */
+#header {
+    // z-index: 999;
+    // position: fixed;
+    display: flex;
+    width: 100%;
+    height: .4rem;
+    background-color: yellow;
+
+    /* 头部左边区域 */
+    .left {
+        width: .4rem;
+        height: .4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon-back {
+            width: .2rem;
+            height: .2rem;
+            background-image: url(../images/sprites.png);
+            background-size: 2rem 2rem;
+            background-position: -0.2rem 0;
+        }
+    }
+
+      /* 头部中间区域 */
+    .center {
+        flex: 1;
+
+        form{
+            position: relative;
+           padding-top: .05rem;
+            .icon-search{
+                position: absolute;
+                top: .1rem;
+                left: .1rem;
+                width: .2rem;
+                height: .2rem;
+                background-image: url(../images/sprites.png);
+                background-size: 2rem 2rem;
+                background-position: -0.6rem -1.1rem;
+            }
+            input{
+            width: 100%;
+            height: .3rem;
+            border-radius: 0.15rem;
+            font-size: .14rem;
+           padding-left: .35rem;
+            }
+        }
+    }
+
+      /* 头部右边区域 */
+    .right {
+        display: flex;
+        width: .4rem;
+        height: .4rem;
+        justify-content: center;
+        align-items: center;
+        .icon-menu{
+            width: .2rem;
+            height: .2rem;
+            background-image: url(../images/sprites.png);
+            background-size: 2rem 2rem;
+            background-position: -0.6rem 0;
+        }
+    }
+}
+
+/* 主体区域 */
+
+#main {
+    flex: 1;
+    display: flex;
+
+    // 分类左侧样式
+    .category-left {
+        width: .85rem;
+        overflow: hidden;
+        height: 100%;
+        .swiper-container {
+            height: 100%;
+            .swiper-slide {
+                height: auto;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    display: block;
+                    width: 100%;
+                    height: .46rem;
+                    background-color: #eee;
+                    text-align: center;
+                    line-height: .46rem;
+                }
+                &.active {
+                    a {
+                        background-color: #fff;
+                        color: @main-color;
+                    }
+                }
+            }           
+        }
+    }
+
+    // 分类右侧样式
+    .category-right {
+        flex: 1;
+        overflow: hidden;
+        padding: .07rem;
+        height: 100%;
+        .swiper-container {
+            height: 100%;
+            .swiper-slide {
+                height: auto;
+            }
+            .swiper-scrollbar{
+                width: .03rem;
+                background-color: rgba(255,0,0,0.1);
+                .swiper-scrollbar-drag{
+                    background-color: rgba(255,0,0,0.5); 
+                }
+            }
+        }
+
+        .banner {
+            
+            img {
+                width: 100%;
+            }
+        }
+
+        #branchList {
+            .jd-brand {
+                h4 {
+                    line-height: .3rem;
+                }
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    li {
+                        width: 33.33%;
+
+                        a {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                width: .7rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 脚部区域 */
+#footer {
+    // z-index: 999;
+    // position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ccc;
+    height: .5rem;
+    width: 100%;
+    ul{
+        display: flex;
+        li{
+            flex: 1;
+            a{
+                display: block;
+                text-align: center;
+                img{
+                    width: .65rem;
+                }
+            }
+        }
+    }
+}
+

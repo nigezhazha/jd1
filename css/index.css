@@ -1,0 +1,61 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+#header{
+    background-color: gray;
+    display: flex;
+}
+#header .left{
+    width: 80px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header .left .logo{
+    width: 60px;
+    height: 23px;
+    /* 使用背景图也要缩小1半  */
+    background: url(../images/sprites.png);
+    /* 默认400*400  把整个原图缩小*/
+    background-size: 200px 200px;
+    /* 背景图定位要缩小1半 220/2 110px */
+    background-position: 0 -110px;
+}
+#header .center{
+    flex: 1;
+}
+#header .center form{
+    padding: 5px 0;
+   position: relative;
+}
+#header .center form .icon-search{
+   position: absolute;
+   top: 10px;
+   left: 5px;
+   width: 20px;
+   height: 20px;
+   background: url(../images/sprites.png);
+   background-size: 200px 200px;
+   background-position: -58px -110px;
+}
+#header .center form input{
+   width: 100%;
+   height: 30px;
+   border-radius: 15px;
+   padding-left: 30px;       
+}
+#header .right{
+    width: 50px;
+    height: 40px;
+}
+#header .right a{
+    display: block;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
